@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:todo_list/common/show_modal.dart';
 
 void main() {
   runApp(const MyApp());
@@ -100,7 +101,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       backgroundColor: Color(0xFFD5E8FA),
                       foregroundColor: Colors.blue.shade800
                     ),
-                    onPressed: (){}, 
+                    onPressed: () => showModalBottomSheet(
+                      isScrollControlled: true,
+                      context: context,
+                      builder: (context)=> AddNewTaskModal()), 
                     child: const Text('+ New Task'))
                 ],
               )
@@ -111,3 +115,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
