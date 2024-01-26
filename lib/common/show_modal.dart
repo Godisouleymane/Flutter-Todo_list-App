@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:todo_list/constants/app_style.dart';
+import 'package:todo_list/widget/textField_widget.dart';
 
 class AddNewTaskModal extends StatelessWidget {
   const AddNewTaskModal({
@@ -31,21 +32,11 @@ class AddNewTaskModal extends StatelessWidget {
           const Gap(12),
           const Text("Title Task", style: AppStyle.headingOne),
           const Gap(6),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.grey.shade200,
-              borderRadius: BorderRadius.circular(8)
-            ),
-            child: TextField(
-              decoration: const InputDecoration(
-                enabledBorder: InputBorder.none,
-                focusedBorder: InputBorder.none
-              ),
-            )
-            ),
+         TextFieldWidget(hintText: 'Add Task Name', maxLine: 1)
         ],
       ),
   
     );
   }
 }
+
