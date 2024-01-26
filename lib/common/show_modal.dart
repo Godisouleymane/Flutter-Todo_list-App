@@ -32,7 +32,11 @@ class AddNewTaskModal extends StatelessWidget {
           const Gap(12),
           const Text("Title Task", style: AppStyle.headingOne),
           const Gap(6),
-         TextFieldWidget(hintText: 'Add Task Name', maxLine: 1)
+         TextFieldWidget(hintText: 'Add Task Name', maxLine: 1),
+         Gap(12),
+         Text('Description', style: AppStyle.headingOne,),
+         Gap(6),
+         TextFieldWidget(hintText: 'Add Descriptions', maxLine: 5)
         ],
       ),
   
