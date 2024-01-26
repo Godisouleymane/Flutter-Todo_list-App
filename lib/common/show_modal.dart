@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:todo_list/constants/app_style.dart';
+import 'package:todo_list/widget/dateTime_widget.dart';
 import 'package:todo_list/widget/radio_widget.dart';
 import 'package:todo_list/widget/textField_widget.dart';
 
@@ -52,6 +54,52 @@ class AddNewTaskModal extends StatelessWidget {
               child:  RadioWidget(categColor: Colors.amberAccent.shade700, titleRadio: 'GEN')
               ),
           ],
+         ),
+
+         const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+          DateTimeWidget(iconSection: CupertinoIcons.calendar, textTitle: 'Date', valueText: 'dd/mm/yy'),
+            Gap(22),
+           DateTimeWidget(iconSection: CupertinoIcons.clock, textTitle: 'Time', valueText: 'hh : mm'),
+          ],
+         ),
+  Gap(12),
+         Row(
+          children: [
+            Expanded(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  foregroundColor: Colors.blue.shade800,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)
+                  ),
+                  side: BorderSide(
+                    color: Colors.blue.shade800
+                  ),
+                  padding: EdgeInsets.symmetric(vertical: 14)
+                ),
+                onPressed: (){},
+                 child: Text('Cancel'))
+              ),
+              Gap(20),
+            Expanded(
+              child: ElevatedButton(
+                 style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue.shade800,
+                  foregroundColor: Colors.white,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)
+                  ),
+                  padding: EdgeInsets.symmetric(vertical: 14)
+                ),
+                onPressed: (){},
+                 child: Text('Create'))
+              ),
+          ],
          )
         ],
       ),
@@ -59,4 +107,3 @@ class AddNewTaskModal extends StatelessWidget {
     );
   }
 }
-
