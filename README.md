@@ -1,10 +1,12 @@
 # todo_list
 
-A new Flutter project.
 
-## Getting Started
+it is a task management application coded with Flutter and Firebase ,
 
-This project is a starting point for a Flutter application.
+Feature :
+- Add a new task
+- Edit a task
+- Delete a task
 
 A few resources to get you started if this is your first Flutter project:
 
