@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:todo_list/constants/app_style.dart';
+import 'package:todo_list/widget/radio_widget.dart';
 import 'package:todo_list/widget/textField_widget.dart';
 
 class AddNewTaskModal extends StatelessWidget {
@@ -36,7 +37,22 @@ class AddNewTaskModal extends StatelessWidget {
          Gap(12),
          Text('Description', style: AppStyle.headingOne,),
          Gap(6),
-         TextFieldWidget(hintText: 'Add Descriptions', maxLine: 5)
+         TextFieldWidget(hintText: 'Add Descriptions', maxLine: 5),
+         Gap(12),
+         Text('Category', style: AppStyle.headingOne,),
+         Row(
+          children: [
+            Expanded(
+              child:  RadioWidget(categColor: Colors.green, titleRadio: 'LRN')
+              ),
+            Expanded(
+              child:  RadioWidget(categColor: Colors.blue.shade700, titleRadio: 'WEK')
+              ),
+            Expanded(
+              child:  RadioWidget(categColor: Colors.amberAccent.shade700, titleRadio: 'GEN')
+              ),
+          ],
+         )
         ],
       ),
   
