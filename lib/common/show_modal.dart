@@ -1,18 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:todo_list/constants/app_style.dart';
+import 'package:todo_list/provider/radio_provider.dart';
 import 'package:todo_list/widget/dateTime_widget.dart';
 import 'package:todo_list/widget/radio_widget.dart';
 import 'package:todo_list/widget/textField_widget.dart';
 
-class AddNewTaskModal extends StatelessWidget {
+class AddNewTaskModal extends ConsumerWidget {
   const AddNewTaskModal({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final radioCategory = ref.watch(radioProvider);
     return Container(
       padding: EdgeInsets.all(30.0),
       height: MediaQuery.of(context).size.height * 0.70,
@@ -46,13 +49,16 @@ class AddNewTaskModal extends StatelessWidget {
            Row(
             children: [
               Expanded(
-                child:  RadioWidget(categColor: Colors.green, titleRadio: 'LRN')
+                child:  RadioWidget(categColor: Colors.green, titleRadio: 'LRN',
+                 valueInput: 1,)
                 ),
               Expanded(
-                child:  RadioWidget(categColor: Colors.blue.shade700, titleRadio: 'WEK')
+                child:  RadioWidget(categColor: Colors.blue.shade700, titleRadio: 'WEK',
+                valueInput: 1,)
                 ),
               Expanded(
-                child:  RadioWidget(categColor: Colors.amberAccent.shade700, titleRadio: 'GEN')
+                child:  RadioWidget(categColor: Colors.amberAccent.shade700, titleRadio: 'GEN',
+                valueInput: 1,)
                 ),
             ],
            ),
