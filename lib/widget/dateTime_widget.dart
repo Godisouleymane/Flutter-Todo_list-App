@@ -9,12 +9,14 @@ class DateTimeWidget extends StatelessWidget {
     super.key,
     required this.iconSection,
     required this.textTitle,
-    required this.valueText
+    required this.valueText,
+    required this.onTap
   });
 
   final String textTitle;
   final String valueText;
   final IconData iconSection;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +30,11 @@ class DateTimeWidget extends StatelessWidget {
             child: Ink(
               decoration: BoxDecoration(
                   color: Colors.grey.shade200,
+                  borderRadius: BorderRadius.circular(10)
               ),
               child: InkWell(
+                borderRadius: BorderRadius.circular(10),
+                onTap: () =>onTap(),
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                   decoration: BoxDecoration(

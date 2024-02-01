@@ -69,12 +69,22 @@ class AddNewTaskModal extends ConsumerWidget {
             ],
            ),
         
-           const Row(
+            Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-            DateTimeWidget(iconSection: CupertinoIcons.calendar, textTitle: 'Date', valueText: 'dd/mm/yy'),
+            DateTimeWidget(iconSection: CupertinoIcons.calendar,
+             textTitle: 'Date', valueText: 'dd/mm/yy',
+             onTap: () => showDatePicker(context: context,
+              initialDate: DateTime.now(),
+              firstDate: DateTime(2021), 
+              lastDate: DateTime(2025)),
+             ),
               Gap(22),
-             DateTimeWidget(iconSection: CupertinoIcons.clock, textTitle: 'Time', valueText: 'hh : mm'),
+             DateTimeWidget(iconSection: CupertinoIcons.clock, 
+             textTitle: 'Time', 
+             valueText: 'hh : mm',
+             onTap: () => showTimePicker(context: context, initialTime: TimeOfDay.now()),
+             ),
             ],
            ),
           Gap(12),
