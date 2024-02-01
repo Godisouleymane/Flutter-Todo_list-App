@@ -8,6 +8,14 @@ Feature :
 - Edit a task
 - Delete a task
 
+![Capture de l'app : ajout d'une tache](screenShoot/cap2.png)
+
+
+![Capture de l'app : ajout d'une tache](screenShoot/cap1.png)
+
+
+
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
