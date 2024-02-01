@@ -7,12 +7,14 @@ class RadioWidget extends ConsumerWidget {
     super.key,
     required this.categColor,
     required this.titleRadio,
-    required this.valueInput
+    required this.valueInput,
+    required this.onChangeValue,
   });
 
   final String titleRadio;
   final Color categColor;
   final valueInput;
+  final VoidCallback onChangeValue;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -21,6 +23,7 @@ class RadioWidget extends ConsumerWidget {
       child: Theme(
         data: ThemeData(unselectedWidgetColor: categColor),
         child: RadioListTile(
+          activeColor: categColor,
           contentPadding: EdgeInsets.zero,
          title: Transform.translate(
            offset: const Offset(-22, 0),
@@ -29,10 +32,9 @@ class RadioWidget extends ConsumerWidget {
             fontWeight: FontWeight.w700
            ),)),
          value: valueInput,
-         groupValue: 0, 
-         onChanged: (value){
-          print('Clicked');
-         }),
+         groupValue: radio, 
+         onChanged: (value)=>  onChangeValue()
+         ),
       ),
     );
   }

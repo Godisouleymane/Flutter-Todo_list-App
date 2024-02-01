@@ -50,15 +50,21 @@ class AddNewTaskModal extends ConsumerWidget {
             children: [
               Expanded(
                 child:  RadioWidget(categColor: Colors.green, titleRadio: 'LRN',
-                 valueInput: 1,)
+                 valueInput: 1,
+                  onChangeValue: () => ref.read(radioProvider.notifier).update((state) => 1),
+                 )
                 ),
               Expanded(
                 child:  RadioWidget(categColor: Colors.blue.shade700, titleRadio: 'WEK',
-                valueInput: 1,)
+                valueInput: 2,
+                onChangeValue: () => ref.read(radioProvider.notifier).update((state) => 2),
+                )
                 ),
               Expanded(
                 child:  RadioWidget(categColor: Colors.amberAccent.shade700, titleRadio: 'GEN',
-                valueInput: 1,)
+                valueInput: 3,
+                 onChangeValue: () => ref.read(radioProvider.notifier).update((state) => 3),
+                )
                 ),
             ],
            ),
