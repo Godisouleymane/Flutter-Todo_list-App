@@ -24,20 +24,29 @@ class DateTimeWidget extends StatelessWidget {
         children: [
           Text(textTitle, style: AppStyle.headingOne,),
           Gap(6),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-            decoration: BoxDecoration(
-            color: Colors.grey.shade200,
-            borderRadius: BorderRadius.circular(8),
-      ),
-      child: Row(
-        children: [
-          Icon(iconSection),
-          Gap(12),
-          Text(valueText)
-        ],
-      ),
-    )
+          Material(
+            child: Ink(
+              decoration: BoxDecoration(
+                  color: Colors.grey.shade200,
+              ),
+              child: InkWell(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                  decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                          children: [
+                Icon(iconSection),
+                Gap(12),
+                Text(valueText)
+                          ],
+                        ),
+                      ),
+              ),
+            ),
+          )
         ],
       ),
     );
